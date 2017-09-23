@@ -84,18 +84,10 @@ ofPath ofApp::getLineFill(ofPolyline _p, float _s, float _t) {
     for (int i = 0; i < v.size(); i++) {
         v[i] -= c;
         v[i].rotate(_t, ofVec3f(0, 0, 1));
-        if (i == 0) {
-            xMin = v[i].x;
-            xMax = v[i].x;
-            yMin = v[i].y;
-            yMax = v[i].y;
-        }
-        else {
-            xMin = MIN(xMin, v[i].x);
-            xMax = MAX(xMax, v[i].x);
-            yMin = MIN(yMin, v[i].y);
-            yMax = MAX(yMax, v[i].y);
-        }
+        (i == 0)?(xMin = v[i].x):(xMin = MIN(xMin, v[i].x));
+        (i == 0)?(xMax = v[i].x):(xMax = MAX(xMax, v[i].x));
+        (i == 0)?(yMin = v[i].y):(yMin = MIN(yMin, v[i].y));
+        (i == 0)?(yMax = v[i].y):(yMax = MAX(yMax, v[i].y));
     }
     
     for (float y = yMin; y < yMax; y += _s) {
