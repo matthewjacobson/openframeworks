@@ -31,4 +31,5 @@ class ofApp : public ofBaseApp{
         ofPath grid;
         float framePad;
         int countBoxes;
+        vector<float> spacingList;
 };

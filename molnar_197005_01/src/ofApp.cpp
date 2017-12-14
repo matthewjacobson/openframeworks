@@ -56,13 +56,15 @@ void ofApp::draw(){
             else if (rand2 < .8) addQtrTriPath1(cx, cy, sideLength, floor(ofRandom(0, 4)));
             else addQtrTriPath2(cx, cy, sideLength, floor(ofRandom(0, 4)));
             
+            
+            
         }
     }
     
     for (int i = 0; i < grid.getOutline().size(); i++) {
         ofPolyline box = grid.getOutline()[i];
         //box.draw();
-        float spacing = ofMap(ofNoise(box.getCentroid2D().x, box.getCentroid2D().y, 100), 0, 1, 2, 20);
+        float spacing = 5;
         float rotation = 180 * ofNoise(box.getCentroid2D().x, box.getCentroid2D().y);
         ofPath lineFill = getLineFill(box, spacing, rotation);
         for (int j = 0; j < lineFill.getOutline().size(); j++) {
