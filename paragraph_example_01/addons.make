@@ -1,0 +1,2 @@
+ofxParagraph
+ofxSmartFont
